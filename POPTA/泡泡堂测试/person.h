@@ -14,6 +14,7 @@ enum DIRECTION{NO=-1,DOWN, LEFT, RIGHT, UP};
 enum PERSON_STATE{STAND, WALK};
 const float SPEED = 100;
 
+
 class person
 {
 public:
@@ -32,6 +33,8 @@ public:
 	void set_person_state(PERSON_STATE _person_state);
 	int getX();
 	int getY();
+	///boom
+	void placeBoom();
 	PERSON_STATE get_person_state();
 	DIRECTION getDirection(); 
 	int Draw();

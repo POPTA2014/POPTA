@@ -14,10 +14,12 @@ HEFFECT		      snd;
 HTEXTURE          tex1;
 HTEXTURE          tex2;
 HTEXTURE          tex;
+HTEXTURE          texPopo;
 hgeQuad           quad;
 
 person			*playerwalk;
 person			*playerstand;
+person			*placeBoom;
 PERSON_STATE     walkorstand;
 map				*Game_Map;
 	
@@ -26,6 +28,7 @@ hgeGUI            *gui;
 hgeFont           *fnt;
 hgeSprite         *spr;
 hgeSprite         *pic;
+hgeSprite         *popoBoom;
 
 bool FrameFunc()
 {
@@ -40,6 +43,8 @@ bool FrameFunc()
 		dir = DOWN;
 	else if(hge->Input_GetKeyState(HGEK_RIGHT))
 		dir = RIGHT;
+	if(hge->Input_GetKeyState(HGEK_SPACE))           //
+		placeBoom->placeBoom();
 
 	float fDeltaTime = hge->Timer_GetDelta();
 
@@ -111,14 +116,19 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	if(hge->System_Initiate()){
 		tex1 = hge->Texture_Load("walk.png");
 		tex2 = hge->Texture_Load("stand.png");
-		tex = hge->Texture_Load("wall1.png");	
+		tex = hge->Texture_Load("wall2.png");	
+		texPopo = hge->Texture_Load("Popo.png");
 		pic = new hgeSprite(tex, 0, 0, BOX_WIDTH, BOX_LENGTH);
 		fnt = new hgeFont("font1.fnt");
 		playerwalk = new person(tex1, 4, 8, 100, 100);
 		playerstand = new person(tex2, 4, 8, 100, 100);
+		placeBoom = new person(texPopo, 4, 8, 40, 40);
 		playerstand->setX(400);
 		playerstand->setY(400);
 		playerstand->Play(LEFT);
+		placeBoom->setX(playerstand->getX());
+		placeBoom->setY(playerstand->getY());
+		placeBoom->Play(LEFT);
 		walkorstand = STAND;
 		hge->System_Start();
 

@@ -54,6 +54,12 @@ void person::Render(float x, float y){
 	}
 }
 
+void person::placeBoom(){
+
+	dir_image[person_direction]->Render(pX, pY);
+	dir_image[person_direction]->Play();
+}
+
 void person::Stop(){
 	for(int i = 0; i < 4; i++)
 		dir_image[i]->Stop();

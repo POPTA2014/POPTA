@@ -2,8 +2,8 @@
 #include <hge.h>
 #include <hgefont.h>
 #include <hgegui.h>
-const int MAP_SIZE[2] = {800, 800};
-const int BOX_NUM = 20;
+const int MAP_SIZE[2] = {680, 680};
+const int BOX_NUM = 17;
 const int BOX_LENGTH = 40;
 const int BOX_WIDTH = 40;
 
