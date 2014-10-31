@@ -54,6 +54,13 @@ void person::Render(float x, float y){
 	}
 }
 
+//place the boom
+
+void person::placeBoom(hgeAnimation	*placeBoom, float fDeltaTime){ 
+	placeBoom->Play();
+	placeBoom->Update(fDeltaTime);
+}
+
 void person::Stop(){
 	for(int i = 0; i < 4; i++)
 		dir_image[i]->Stop();

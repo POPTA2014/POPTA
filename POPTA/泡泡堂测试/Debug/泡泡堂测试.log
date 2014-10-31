@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿生成启动时间为 2014/10/31 20:06:10。
      1>项目“D:\SE group\POPTA\POPTA\泡泡堂测试\泡泡堂测试.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
@@ -21,3 +22,24 @@
 生成成功。
 
 已用时间 00:00:02.84
+=======
+﻿生成启动时间为 2014/10/31 19:21:24。
+     1>项目“G:\desk\大四（上）\软件工程\work\POPTA\POPTA\POPTA\泡泡堂测试\泡泡堂测试.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt person.cpp
+         person.cpp
+     1>g:\desk\大四（上）\软件工程\work\popta\popta\popta\泡泡堂测试\person.cpp(49): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+     1>g:\desk\大四（上）\软件工程\work\popta\popta\popta\泡泡堂测试\person.cpp(53): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+     1>g:\desk\大四（上）\软件工程\work\popta\popta\popta\泡泡堂测试\person.cpp(106): warning C4244: “return”: 从“double”转换到“int”，可能丢失数据
+     1>g:\desk\大四（上）\软件工程\work\popta\popta\popta\泡泡堂测试\person.cpp(110): warning C4244: “return”: 从“double”转换到“int”，可能丢失数据
+       Link:
+         D:\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"G:\desk\大四（上）\软件工程\work\POPTA\POPTA\POPTA\Debug\泡泡堂测试.exe" /INCREMENTAL /NOLOGO hge.lib hgehelp.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB:libc.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"G:\desk\大四（上）\软件工程\work\POPTA\POPTA\POPTA\Debug\泡泡堂测试.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"G:\desk\大四（上）\软件工程\work\POPTA\POPTA\POPTA\Debug\泡泡堂测试.lib" /MACHINE:X86 Debug\map.obj
+         Debug\person.obj
+         Debug\popta.obj
+         泡泡堂测试.vcxproj -> G:\desk\大四（上）\软件工程\work\POPTA\POPTA\POPTA\Debug\泡泡堂测试.exe
+     1>已完成生成项目“G:\desk\大四（上）\软件工程\work\POPTA\POPTA\POPTA\泡泡堂测试\泡泡堂测试.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:05.01
+>>>>>>> origin/master
