@@ -57,6 +57,7 @@ void person::Render(float x, float y){
 //place the boom
 
 void person::placeBoom(hgeAnimation	*placeBoom, float fDeltaTime){ 
+	placeBoom->Render(pX, pY);
 	placeBoom->Play();
 	placeBoom->Update(fDeltaTime);
 }
