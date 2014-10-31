@@ -35,8 +35,6 @@ hgeSprite         *spr;
 hgeSprite         *pic;
 hgeSprite         *popoBoom;
 
-float fDeltaTime = hge->Timer_GetDelta();
-
 bool FrameFunc()
 {
 	DIRECTION dir = NO;
@@ -53,9 +51,11 @@ bool FrameFunc()
 	else{
 	};
 	if(hge->Input_GetKeyState(HGEK_SPACE))           //place the boom
-		playerstand->placeBoom(placeBoom,fDeltaTime);
+		;//
 	else{
 	};
+
+float fDeltaTime = hge->Timer_GetDelta();
 
 	if(dir == NO){
         player->Stop();
@@ -78,6 +78,7 @@ bool FrameFunc()
 			playerwalk->setX(playerstand->getX());
 			playerwalk->setY(playerstand->getY());
 			playerwalk->Play(playerstand->getDirection());
+			playerstand->placeBoom(placeBoom,fDeltaTime);//place the boom
 			playerstand->Stop();
 			walkorstand = WALK;
 		}
@@ -98,22 +99,16 @@ bool RenderFunc()
 		for(int j = 0; j < 20; j++)
 			pic->Render(i * 40, j * 40);
 <<<<<<< HEAD
-<<<<<<< HEAD
 	player->Render();
 =======
 	if(walkorstand == STAND){
-=======
-	if(walkorstand == STAND)
->>>>>>> parent of 044ece0... 我做了一些修改。
 		playerstand->Render();
-	else
+		placeBoom->Render(playerstand->getX(),playerstand->getY());
+	}else{
 		playerwalk->Render();
-<<<<<<< HEAD
 		placeBoom->Render(playerwalk->getX(),playerwalk->getY());
 	}
 >>>>>>> origin/master
-=======
->>>>>>> parent of 044ece0... 我做了一些修改。
 	hge->Gfx_EndScene();
 
 	return false;
@@ -153,7 +148,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		fnt = new hgeFont("font1.fnt");
 		playerwalk = new person(tex1, 4, 8, 100, 100);
 		playerstand = new person(tex2, 4, 8, 100, 100);
-		placeBoom = new hgeAnimation(texPopo, 4, 8, 0, 40, 40, 40);
+		placeBoom = new hgeAnimation(texPopo, 4, 8, 0, 0, 40, 40);
 		playerstand->setX(400);
 		playerstand->setY(400);
 		playerstand->Play(LEFT);

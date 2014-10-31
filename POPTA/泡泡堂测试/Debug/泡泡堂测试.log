@@ -1,51 +1,13 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-﻿生成启动时间为 2014/10/31 20:06:10。
+﻿生成启动时间为 2014/10/31 21:05:20。
      1>项目“D:\SE group\POPTA\POPTA\泡泡堂测试\泡泡堂测试.vcxproj”在节点 2 上(Build 个目标)。
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt person.cpp popta.cpp
-         popta.cpp
-     1>d:\se group\popta\popta\泡泡堂测试\popta.cpp(69): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-     1>d:\se group\popta\popta\泡泡堂测试\popta.cpp(95): warning C4244: “参数”: 从“const int”转换到“float”，可能丢失数据
-         person.cpp
-     1>d:\se group\popta\popta\泡泡堂测试\person.cpp(49): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
-     1>d:\se group\popta\popta\泡泡堂测试\person.cpp(53): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
-     1>d:\se group\popta\popta\泡泡堂测试\person.cpp(103): warning C4244: “return”: 从“double”转换到“int”，可能丢失数据
-     1>d:\se group\popta\popta\泡泡堂测试\person.cpp(107): warning C4244: “return”: 从“double”转换到“int”，可能丢失数据
-         正在生成代码...
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\SE group\POPTA\POPTA\Debug\泡泡堂测试.exe" /INCREMENTAL /NOLOGO hge.lib hgehelp.lib opencv_ts300.lib opencv_world300.lib opencv_stitching300.lib opencv_videostab300.lib opencv_calib3d300.lib opencv_features2d300.lib opencv_objdetect300.lib opencv_highgui300.lib opencv_superres300.lib opencv_shape300.lib opencv_videoio300.lib opencv_photo300.lib opencv_imgcodecs300.lib opencv_video300.lib opencv_imgproc300.lib opencv_flann300.lib opencv_ml300.lib opencv_core300.lib opencv_ts300d.lib opencv_world300d.lib opencv_stitching300d.lib opencv_videostab300d.lib opencv_calib3d300d.lib opencv_features2d300d.lib opencv_objdetect300d.lib opencv_highgui300d.lib opencv_superres300d.lib opencv_shape300d.lib opencv_videoio300d.lib opencv_photo300d.lib opencv_imgcodecs300d.lib opencv_video300d.lib opencv_imgproc300d.lib opencv_flann300d.lib opencv_ml300d.lib opencv_core300d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB:LIBC.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\SE group\POPTA\POPTA\Debug\泡泡堂测试.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\SE group\POPTA\POPTA\Debug\泡泡堂测试.lib" /MACHINE:X86 Debug\map.obj
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\SE group\POPTA\POPTA\Debug\泡泡堂测试.exe" /INCREMENTAL /NOLOGO hge.lib hgehelp.lib hge.lib hgehelp.lib opencv_ts300.lib opencv_world300.lib opencv_stitching300.lib opencv_videostab300.lib opencv_calib3d300.lib opencv_features2d300.lib opencv_objdetect300.lib opencv_highgui300.lib opencv_superres300.lib opencv_shape300.lib opencv_videoio300.lib opencv_photo300.lib opencv_imgcodecs300.lib opencv_video300.lib opencv_imgproc300.lib opencv_flann300.lib opencv_ml300.lib opencv_core300.lib opencv_ts300d.lib opencv_world300d.lib opencv_stitching300d.lib opencv_videostab300d.lib opencv_calib3d300d.lib opencv_features2d300d.lib opencv_objdetect300d.lib opencv_highgui300d.lib opencv_superres300d.lib opencv_shape300d.lib opencv_videoio300d.lib opencv_photo300d.lib opencv_imgcodecs300d.lib opencv_video300d.lib opencv_imgproc300d.lib opencv_flann300d.lib opencv_ml300d.lib opencv_core300d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB:libc.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\SE group\POPTA\POPTA\Debug\泡泡堂测试.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\SE group\POPTA\POPTA\Debug\泡泡堂测试.lib" /MACHINE:X86 Debug\map.obj
          Debug\person.obj
          Debug\popta.obj
+         LINK : 没有找到 D:\SE group\POPTA\POPTA\Debug\泡泡堂测试.exe 或上一个增量链接没有生成它；正在执行完全链接
          泡泡堂测试.vcxproj -> D:\SE group\POPTA\POPTA\Debug\泡泡堂测试.exe
      1>已完成生成项目“D:\SE group\POPTA\POPTA\泡泡堂测试\泡泡堂测试.vcxproj”(Build 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:02.84
-=======
-﻿生成启动时间为 2014/10/31 19:21:24。
-=======
-﻿生成启动时间为 2014/10/31 9:59:14。
->>>>>>> parent of 044ece0... 我做了一些修改。
-     1>项目“G:\desk\大四（上）\软件工程\work\POPTA\POPTA\POPTA\泡泡堂测试\泡泡堂测试.vcxproj”在节点 2 上(Build 个目标)。
-     1>ClCompile:
-         D:\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt popta.cpp
-         popta.cpp
-     1>g:\desk\大四（上）\软件工程\work\popta\popta\popta\泡泡堂测试\popta.cpp(95): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-     1>g:\desk\大四（上）\软件工程\work\popta\popta\popta\泡泡堂测试\popta.cpp(127): warning C4244: “参数”: 从“const int”转换到“float”，可能丢失数据
-       Link:
-         D:\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"G:\desk\大四（上）\软件工程\work\POPTA\POPTA\POPTA\Debug\泡泡堂测试.exe" /INCREMENTAL /NOLOGO hge.lib hgehelp.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB:libc.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"G:\desk\大四（上）\软件工程\work\POPTA\POPTA\POPTA\Debug\泡泡堂测试.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"G:\desk\大四（上）\软件工程\work\POPTA\POPTA\POPTA\Debug\泡泡堂测试.lib" /MACHINE:X86 Debug\map.obj
-         Debug\person.obj
-         Debug\popta.obj
-         泡泡堂测试.vcxproj -> G:\desk\大四（上）\软件工程\work\POPTA\POPTA\POPTA\Debug\泡泡堂测试.exe
-     1>已完成生成项目“G:\desk\大四（上）\软件工程\work\POPTA\POPTA\POPTA\泡泡堂测试\泡泡堂测试.vcxproj”(Build 个目标)的操作。
-
-生成成功。
-
-<<<<<<< HEAD
-已用时间 00:00:05.01
->>>>>>> origin/master
-=======
-已用时间 00:00:01.24
->>>>>>> parent of 044ece0... 我做了一些修改。
+已用时间 00:00:01.17
