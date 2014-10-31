@@ -17,14 +17,9 @@ HTEXTURE          tex;
 HTEXTURE          texPopo;
 hgeQuad           quad;
 
-<<<<<<< HEAD
 person			*player;
-=======
-person			*playerwalk;
-person			*playerstand;
 hgeAnimation	*placeBoom;
 PERSON_STATE     walkorstand;
->>>>>>> origin/master
 map				*Game_Map;
 bool            isWalking;
 	
@@ -61,28 +56,12 @@ float fDeltaTime = hge->Timer_GetDelta();
         player->Stop();
 		isWalking = false;
 	}else{
-<<<<<<< HEAD
 		if(!isWalking)	
 			player->Play();
         player->setDirection(dir);
         player->Move(SPEED, fDeltaTime);
         player->Update(fDeltaTime, dir);
 		isWalking = true;
-=======
-		if(walkorstand == WALK){
-			playerwalk->setDirection(dir);
-			playerwalk->Move(SPEED, fDeltaTime);
-			playerwalk->Update(fDeltaTime);
-		}
-		else{
-			playerwalk->setX(playerstand->getX());
-			playerwalk->setY(playerstand->getY());
-			playerwalk->Play(playerstand->getDirection());
-			playerstand->placeBoom(placeBoom,fDeltaTime);//place the boom
-			playerstand->Stop();
-			walkorstand = WALK;
-		}
->>>>>>> origin/master
 	}
 
 	return false;
@@ -98,17 +77,7 @@ bool RenderFunc()
 	for(int i = 0; i < 20; i++)
 		for(int j = 0; j < 20; j++)
 			pic->Render(i * 40, j * 40);
-<<<<<<< HEAD
 	player->Render();
-=======
-	if(walkorstand == STAND){
-		playerstand->Render();
-		placeBoom->Render(playerstand->getX(),playerstand->getY());
-	}else{
-		playerwalk->Render();
-		placeBoom->Render(playerwalk->getX(),playerwalk->getY());
-	}
->>>>>>> origin/master
 	hge->Gfx_EndScene();
 
 	return false;
@@ -129,31 +98,19 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	hge->System_SetState(HGE_USESOUND, false);
 
 	int Ini_Stage[BOX_NUM][BOX_NUM] = {{0}};
-	Game_Map = new map(hge, Ini_Stage);
 
 	if(hge->System_Initiate()){
 		tex1 = hge->Texture_Load("walk.png");
-<<<<<<< HEAD
 		pic = new hgeSprite(tex, 0, 0, BOX_WIDTH, BOX_LENGTH);
 		fnt = new hgeFont("font1.fnt");
 		player = new person(tex1, 4, 8, 100, 100);
 		player->setX(400);
 		player->setY(400);
 		player->Play(LEFT);
-=======
-		tex2 = hge->Texture_Load("stand.png");
-		tex = hge->Texture_Load("wall2.png");	
 		texPopo = hge->Texture_Load("Popo.png");
 		pic = new hgeSprite(tex, 0, 0, BOX_WIDTH, BOX_LENGTH);
 		fnt = new hgeFont("font1.fnt");
-		playerwalk = new person(tex1, 4, 8, 100, 100);
-		playerstand = new person(tex2, 4, 8, 100, 100);
 		placeBoom = new hgeAnimation(texPopo, 4, 8, 0, 0, 40, 40);
-		playerstand->setX(400);
-		playerstand->setY(400);
-		playerstand->Play(LEFT);
-		walkorstand = STAND;
->>>>>>> origin/master
 		hge->System_Start();
 
 
