@@ -19,7 +19,7 @@ hgeQuad           quad;
 
 person			*playerwalk;
 person			*playerstand;
-person			*placeBoom;
+hgeAnimation	*placeBoom;
 PERSON_STATE     walkorstand;
 map				*Game_Map;
 	
@@ -29,6 +29,8 @@ hgeFont           *fnt;
 hgeSprite         *spr;
 hgeSprite         *pic;
 hgeSprite         *popoBoom;
+
+float fDeltaTime = hge->Timer_GetDelta();
 
 bool FrameFunc()
 {
@@ -43,10 +45,12 @@ bool FrameFunc()
 		dir = DOWN;
 	else if(hge->Input_GetKeyState(HGEK_RIGHT))
 		dir = RIGHT;
-	if(hge->Input_GetKeyState(HGEK_SPACE))           //
-		placeBoom->placeBoom();
-
-	float fDeltaTime = hge->Timer_GetDelta();
+	else{
+	};
+	if(hge->Input_GetKeyState(HGEK_SPACE))           //place the boom
+		playerstand->placeBoom(placeBoom,fDeltaTime);
+	else{
+	};
 
 	if(dir == NO){
 		if(walkorstand == WALK){
@@ -122,13 +126,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		fnt = new hgeFont("font1.fnt");
 		playerwalk = new person(tex1, 4, 8, 100, 100);
 		playerstand = new person(tex2, 4, 8, 100, 100);
-		placeBoom = new person(texPopo, 4, 8, 40, 40);
+		placeBoom = new hgeAnimation(texPopo, 4, 8, 0, 40, 40, 40);
 		playerstand->setX(400);
 		playerstand->setY(400);
 		playerstand->Play(LEFT);
-		placeBoom->setX(playerstand->getX());
-		placeBoom->setY(playerstand->getY());
-		placeBoom->Play(LEFT);
 		walkorstand = STAND;
 		hge->System_Start();
 

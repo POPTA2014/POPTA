@@ -33,8 +33,8 @@ public:
 	void set_person_state(PERSON_STATE _person_state);
 	int getX();
 	int getY();
-	///boom
-	void placeBoom();
+//place the boom
+	void placeBoom(hgeAnimation	*placeBoom, float fDeltaTime);
 	PERSON_STATE get_person_state();
 	DIRECTION getDirection(); 
 	int Draw();

@@ -54,10 +54,12 @@ void person::Render(float x, float y){
 	}
 }
 
-void person::placeBoom(){
+//place the boom
 
-	dir_image[person_direction]->Render(pX, pY);
-	dir_image[person_direction]->Play();
+void person::placeBoom(hgeAnimation	*placeBoom, float fDeltaTime){ 
+	placeBoom->Render(pX, pY);
+	placeBoom->Play();
+	placeBoom->Update(fDeltaTime);
 }
 
 void person::Stop(){
