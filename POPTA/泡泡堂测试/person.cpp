@@ -59,6 +59,10 @@ void person::Stop(){
 		dir_image[i]->Stop();
 }
 
+void person::Play(){
+	dir_image[person_direction]->Play();
+}
+
 void person::Play(DIRECTION direction){
 	person_direction = direction;
 	dir_image[person_direction]->Play();

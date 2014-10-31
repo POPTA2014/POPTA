@@ -25,6 +25,7 @@ public:
 	void Update(float fDeltaTime, DIRECTION direction = NO);
 	void Render(float x = -1, float y = -1);
 	void Stop();
+	void Play();
 	void Play(DIRECTION directionh);
 	void Move(float speed, float fDeltaTime);
 	void setX(int x);

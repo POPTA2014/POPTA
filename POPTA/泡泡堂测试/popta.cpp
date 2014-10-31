@@ -18,6 +18,7 @@ hgeQuad           quad;
 
 person			*player;
 map				*Game_Map;
+bool            isWalking;
 	
 // Pointers to the HGE objects we will use
 hgeGUI            *gui;
@@ -43,10 +44,14 @@ bool FrameFunc()
 
 	if(dir == NO){
         player->Stop();
+		isWalking = false;
 	}else{
+		if(!isWalking)	
+			player->Play();
         player->setDirection(dir);
         player->Move(SPEED, fDeltaTime);
         player->Update(fDeltaTime, dir);
+		isWalking = true;
 	}
 
 	return false;
