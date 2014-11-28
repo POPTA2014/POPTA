@@ -5,6 +5,7 @@
 #include <math.h>
 #include "person.h"
 #include "map.h"
+#include <time.h>
 
 
 HGE *hge = 0;
@@ -15,10 +16,15 @@ HTEXTURE          tex1;
 HTEXTURE          tex2;
 HTEXTURE          tex;
 HTEXTURE          texPopo;
+HTEXTURE          effecttex;
+HTEXTURE		  bigPopo;
+HTEXTURE		  maptex;
 hgeQuad           quad;
 
 person			*player;
 hgeAnimation	*placeBoom;
+hgeAnimation    *Popo;
+hgeAnimation    *effect;
 PERSON_STATE     walkorstand;
 map				*Game_Map;
 bool            isWalking;
@@ -29,7 +35,8 @@ hgeFont           *fnt;
 hgeSprite         *spr;
 hgeSprite         *pic;
 hgeSprite         *popoBoom;
-
+hgeSprite         *p[16];
+int index[20][20];
 bool FrameFunc()
 {
 	DIRECTION dir = NO;
@@ -55,13 +62,21 @@ float fDeltaTime = hge->Timer_GetDelta();
 	if(dir == NO){
         player->Stop();
 		isWalking = false;
+		effect->Update(fDeltaTime);
+		Popo->Update(fDeltaTime);
 	}else{
 		if(!isWalking)	
+		{
 			player->Play();
+			effect->Play();
+			Popo->Play();
+		}
         player->setDirection(dir);
         player->Move(SPEED, fDeltaTime);
         player->Update(fDeltaTime, dir);
 		isWalking = true;
+		//effect->Stop();
+		//Popo->Stop();
 	}
 
 	return false;
@@ -76,8 +91,10 @@ bool RenderFunc()
 	fnt->printf(5, 5, HGETEXT_LEFT, "FPS:%d  x:%d  y:%d", hge->Timer_GetFPS(), player->getX(), player->getY());
 	for(int i = 0; i < 20; i++)
 		for(int j = 0; j < 20; j++)
-			pic->Render(i * 40, j * 40);
+			p[index[i][j]]->Render(i * 40, j * 40);
 	player->Render();
+	effect->Render(140, 140);
+	Popo->Render(280, 280);
 	hge->Gfx_EndScene();
 
 	return false;
@@ -98,19 +115,31 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	hge->System_SetState(HGE_USESOUND, false);
 
 	int Ini_Stage[BOX_NUM][BOX_NUM] = {{0}};
+	srand((unsigned)time(NULL));
+	for(int i = 0; i < 20; i++)
+		for(int j = 0; j < 20; j++)
+			index[i][j] = rand() % 16;
 
 	if(hge->System_Initiate()){
 		tex1 = hge->Texture_Load("walk.png");
-		pic = new hgeSprite(tex, 0, 0, BOX_WIDTH, BOX_LENGTH);
+		tex = hge->Texture_Load("wall1.png");
+		maptex = hge->Texture_Load("maptype1.png");
+		pic = new hgeSprite(tex, 0, 0, BOX_WIDTH - 20, BOX_LENGTH);
+		p[0] = new hgeSprite(tex, 0, 0, BOX_WIDTH - 20, BOX_LENGTH);
 		fnt = new hgeFont("font1.fnt");
 		player = new person(tex1, 4, 8, 100, 100);
+		for(int i = 0; i < 16; i++){
+			p[i] = new hgeSprite(maptex, 40*i, 0, 40, 40);
+		}
 		player->setX(400);
 		player->setY(400);
 		player->Play(LEFT);
 		texPopo = hge->Texture_Load("Popo.png");
-		pic = new hgeSprite(tex, 0, 0, BOX_WIDTH, BOX_LENGTH);
-		fnt = new hgeFont("font1.fnt");
+		bigPopo = hge->Texture_Load("BigPopo.png");
+		effecttex = hge->Texture_Load("Explosion.png");
 		placeBoom = new hgeAnimation(texPopo, 4, 8, 0, 0, 40, 40);
+		effect = new hgeAnimation(effecttex, 14, 8, 0, 0, 40, 80);
+		Popo = new hgeAnimation(bigPopo, 8, 8, 0, 0, 72, 72);
 		hge->System_Start();
 
 

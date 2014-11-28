@@ -62,8 +62,7 @@ void person::placeBoom(hgeAnimation	*placeBoom, float fDeltaTime){
 }
 
 void person::Stop(){
-	for(int i = 0; i < 4; i++)
-		dir_image[i]->Stop();
+	dir_image[person_direction]->Stop();
 }
 
 void person::Play(){
