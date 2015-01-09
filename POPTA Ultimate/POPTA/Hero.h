@@ -61,6 +61,7 @@ public:
 	double getX();							//获取当前英雄x位置
 	double getY();							//获取当前英雄y位置
 	int getLethality();							//获取炸弹威力
+	double getSpeed();
 	void setX(double x);						//设置英雄x位置
 	void setY(double y);						//设置英雄y位置
 	void boomExp();

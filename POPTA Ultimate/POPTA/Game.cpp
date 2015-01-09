@@ -934,24 +934,21 @@ bool Game::gameFrameFunc()
 			boom[index]->setBoomExpT(boom[index]->getBoomExpT()+1);
 			if(boom[index]->getBoomExpT() == 1)
 				hge->Effect_Play(boomMusic);
-			if(boom[index]->getBoomExpT() == 20)
+			if(!player1->isDead() && bombHero(index, player1->getX(), player1->getY()))
 			{
-				if(bombHero(index, player1->getX(), player1->getY()))
-				{
 					player1->heroDie();
-				}
-				if(bombHero(index, player2->getX(), player2->getY()))
+			}
+			if(!player2->isDead() &&bombHero(index, player2->getX(), player2->getY()))
+			{
+				player2->heroDie();
+			}
+			for(int i = 0; i < monsternum; i++){
+				if(!monster[i]->isDead() && bombHero(index, monster[i]->getX(), monster[i]->getY()))
 				{
-					player2->heroDie();
-				}
-				for(int i = 0; i < monsternum; i++){
-					if(bombHero(index, monster[i]->getX(), monster[i]->getY()))
-					{
-						int x = int((monster[i]->getX())/BOX_HEIGHT)*BOX_HEIGHT;
-						int y = int((monster[i]->getY())/BOX_WIDTH)*BOX_WIDTH;
-						addTool(ToolsKind(rand()%5+1),x,y);//道具种类随机
-						monster[i]->monsterDie();
-					}
+					int x = int((monster[i]->getX())/BOX_HEIGHT)*BOX_HEIGHT;
+					int y = int((monster[i]->getY())/BOX_WIDTH)*BOX_WIDTH;
+					addTool(ToolsKind(rand()%5+1),x,y);//道具种类随机
+					monster[i]->monsterDie();
 				}
 			}
 			if(boom[index]->getBoomExpT() == 300)
@@ -1081,7 +1078,6 @@ bool Game::gameRenderFunc()
 		}
 		index = (index + 1) % 100;
 	}
-
 	gameGUI->Render();
 
 	//////显示游戏时间
@@ -1091,7 +1087,7 @@ bool Game::gameRenderFunc()
 	fnt->printf(870, 60, HGETEXT_RIGHT, "%d", second);
 
 	//////显示1P 英雄复活所需要的时间
-	fnt->printf(810,163,HGETEXT_RIGHT,"%2.1f",player1->getReviveTime());
+	fnt->printf(810,163,HGETEXT_LEFT,"%3.0f",player1->getSpeed());
 
 	//////显示1P 英雄还可放置的炸弹数
 	fnt->printf(960, 163, HGETEXT_RIGHT, "%d", player1->getLeftBomb());
@@ -1104,7 +1100,7 @@ bool Game::gameRenderFunc()
 
 
 	//////显示2P 英雄复活所需要的时间
-	fnt->printf(810, 330,HGETEXT_RIGHT,"%2.1f",player2->getReviveTime());
+	fnt->printf(810, 330,HGETEXT_LEFT,"%3.0f",player2->getSpeed());
 
 	//////显示2P 英雄还可放置的炸弹数
 	fnt->printf(960, 330, HGETEXT_RIGHT, "%d", player2->getLeftBomb());

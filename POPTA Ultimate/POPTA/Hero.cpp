@@ -55,7 +55,8 @@ void Hero::getTools(ToolsKind toolskind)
 		boom_limit++;
 		break;
 	case SPEED_ADD://加速度
-		move_speed +=5;
+		if(move_speed < MAX_SPEED)
+			move_speed +=50;
 		break;
 	case POWER_ADD://加泡泡威力
 		if(boom_lethality < MAX_POWER)
@@ -65,7 +66,7 @@ void Hero::getTools(ToolsKind toolskind)
 		boom_lethality = MAX_POWER;
 		break;
 	case SPEED_MAX://速度最大
-		move_speed = MAX_SPEED;
+			move_speed = MAX_SPEED;
 		break;
 	default:
 		break;
@@ -78,7 +79,7 @@ void Hero::heroDie()
 	dead_time = 0;
 	boom_limit = 1;
 	boom_lethality = 1;
-	move_speed = 200;
+	move_speed = 150;
 	toStartSite();
 	skillBegin();
 	//set dead_time
@@ -226,7 +227,7 @@ void Hero::skillBegin()
 		soccupation = "Saber";
 		break;
 	case Assassin:
-		move_speed = 200;
+		move_speed = 250;
 		soccupation = "Assassin";
 		break;
 	case Basaker:
@@ -296,6 +297,11 @@ void Hero::setOccupation(OCCUPATION occ)
 char* Hero::getOccupation() const
 {
 	return soccupation;
+}
+
+double Hero::getSpeed()
+{
+	return move_speed;
 }
 
 

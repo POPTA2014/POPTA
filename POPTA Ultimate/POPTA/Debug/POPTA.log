@@ -1,9 +1,24 @@
-﻿生成启动时间为 2015/1/9 16:20:36。
+﻿生成启动时间为 2015/1/9 18:25:01。
      1>项目“D:\SE group\POPTA\POPTA Ultimate\POPTA\POPTA.vcxproj”在节点 2 上(Build 个目标)。
-     1>Link:
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Hero.cpp
+         Hero.cpp
+     1>d:\se group\popta\popta ultimate\popta\hero.cpp(166): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+     1>d:\se group\popta\popta ultimate\popta\hero.cpp(170): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\SE group\POPTA\POPTA Ultimate\Debug\POPTA.exe" /INCREMENTAL /NOLOGO hge.lib hgehelp.lib glaux.lib opengl32.lib glu32.lib glut32.lib hge.lib hgehelp.lib opencv_ts300.lib opencv_world300.lib opencv_stitching300.lib opencv_videostab300.lib opencv_calib3d300.lib opencv_features2d300.lib opencv_objdetect300.lib opencv_highgui300.lib opencv_superres300.lib opencv_shape300.lib opencv_videoio300.lib opencv_photo300.lib opencv_imgcodecs300.lib opencv_video300.lib opencv_imgproc300.lib opencv_flann300.lib opencv_ml300.lib opencv_core300.lib opencv_ts300d.lib opencv_world300d.lib opencv_stitching300d.lib opencv_videostab300d.lib opencv_calib3d300d.lib opencv_features2d300d.lib opencv_objdetect300d.lib opencv_highgui300d.lib opencv_superres300d.lib opencv_shape300d.lib opencv_videoio300d.lib opencv_photo300d.lib opencv_imgcodecs300d.lib opencv_video300d.lib opencv_imgproc300d.lib opencv_flann300d.lib opencv_ml300d.lib opencv_core300d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB:libc.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\SE group\POPTA\POPTA Ultimate\Debug\POPTA.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\SE group\POPTA\POPTA Ultimate\Debug\POPTA.lib" /MACHINE:X86 Debug\Boom.obj
+         Debug\Game.obj
+         Debug\GUI_edit.obj
+         Debug\Hero.obj
+         Debug\Interface.obj
+         Debug\main.obj
+         Debug\Map.obj
+         Debug\menuitem.obj
+         Debug\Monster.obj
+         Debug\Tools.obj
          POPTA.vcxproj -> D:\SE group\POPTA\POPTA Ultimate\Debug\POPTA.exe
      1>已完成生成项目“D:\SE group\POPTA\POPTA Ultimate\POPTA\POPTA.vcxproj”(Build 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:00.19
+已用时间 00:00:03.58

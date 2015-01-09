@@ -3,7 +3,7 @@
 #include <hge.h>
 #include <hgeanim.h>
 
-#define MAX_SPEED 500
+#define MAX_SPEED 400
 #define MAX_POWER 5 
 #define MAX_BOMB 10
 
